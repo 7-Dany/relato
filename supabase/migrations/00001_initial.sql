@@ -100,3 +100,17 @@ create or replace trigger on_auth_user_created
 insert into public.profiles (id, email)
 select id, email from auth.users
 on conflict (id) do nothing;
+
+create policy "Users can delete their own diagrams"
+  on public.diagrams for delete
+  using (created_by = auth.uid());
+
+create policy "Anyone can view shared diagrams"
+    on public.diagrams for select
+    using (
+      exists (
+        select 1 from public.diagram_shares
+        where diagram_id = diagrams.id
+        and (expires_at is null or expires_at > now())
+      )
+);
