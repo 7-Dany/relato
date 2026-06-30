@@ -4,223 +4,293 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@theme inline {
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-    --font-sans: var(--font-sans);
-    --font-mono: var(--font-geist-mono);
-    --font-heading: var(--font-heading);
-    --color-sidebar-ring: var(--sidebar-ring);
-    --color-sidebar-border: var(--sidebar-border);
-    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-    --color-sidebar-accent: var(--sidebar-accent);
-    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-    --color-sidebar-primary: var(--sidebar-primary);
-    --color-sidebar-foreground: var(--sidebar-foreground);
-    --color-sidebar: var(--sidebar);
-    --color-chart-5: var(--chart-5);
-    --color-chart-4: var(--chart-4);
-    --color-chart-3: var(--chart-3);
-    --color-chart-2: var(--chart-2);
-    --color-chart-1: var(--chart-1);
-    --color-ring: var(--ring);
-    --color-input: var(--input);
-    --color-border: var(--border);
-    --color-destructive: var(--destructive);
-    --color-accent-foreground: var(--accent-foreground);
-    --color-accent: var(--accent);
-    --color-muted-foreground: var(--muted-foreground);
-    --color-muted: var(--muted);
-    --color-secondary-foreground: var(--secondary-foreground);
-    --color-secondary: var(--secondary);
-    --color-primary-foreground: var(--primary-foreground);
-    --color-primary: var(--primary);
-    --color-popover-foreground: var(--popover-foreground);
-    --color-popover: var(--popover);
-    --color-card-foreground: var(--card-foreground);
-    --color-card: var(--card);
-    --radius-sm: calc(var(--radius) * 0.6);
-    --radius-md: calc(var(--radius) * 0.8);
-    --radius-lg: var(--radius);
-    --radius-xl: calc(var(--radius) * 1.4);
-    --radius-2xl: calc(var(--radius) * 1.8);
-    --radius-3xl: calc(var(--radius) * 2.2);
-    --radius-4xl: calc(var(--radius) * 2.6);
-
-    /* Emil: custom easing for UI interactions */
-    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
-}
-
 :root {
-    --background: oklch(1 0 0);
-    --foreground: oklch(0.153 0.006 107.1);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.153 0.006 107.1);
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.153 0.006 107.1);
-    --primary: oklch(0.553 0.195 38.402);
-    --primary-foreground: oklch(0.98 0.016 73.684);
-    --secondary: oklch(0.967 0.001 286.375);
-    --secondary-foreground: oklch(0.21 0.006 285.885);
-    --muted: oklch(0.966 0.005 106.5);
-    --muted-foreground: oklch(0.58 0.031 107.3);
-    --accent: oklch(0.966 0.005 106.5);
-    --accent-foreground: oklch(0.228 0.013 107.4);
-    --destructive: oklch(0.577 0.245 27.325);
-    --border: oklch(0.93 0.007 106.5);
-    --input: oklch(0.93 0.007 106.5);
-    --ring: oklch(0.737 0.021 106.9);
-    --chart-1: oklch(0.837 0.128 66.29);
-    --chart-2: oklch(0.705 0.213 47.604);
-    --chart-3: oklch(0.646 0.222 41.116);
-    --chart-4: oklch(0.553 0.195 38.402);
-    --chart-5: oklch(0.47 0.157 37.304);
-    --radius: 0.625rem;
-    --sidebar: oklch(0.988 0.003 106.5);
-    --sidebar-foreground: oklch(0.153 0.006 107.1);
-    --sidebar-primary: oklch(0.646 0.222 41.116);
-    --sidebar-primary-foreground: oklch(0.98 0.016 73.684);
-    --sidebar-accent: oklch(0.966 0.005 106.5);
-    --sidebar-accent-foreground: oklch(0.228 0.013 107.4);
-    --sidebar-border: oklch(0.93 0.007 106.5);
-    --sidebar-ring: oklch(0.737 0.021 106.9);
+  --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out-strong: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.148 0.004 228.8);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.148 0.004 228.8);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.148 0.004 228.8);
+  --primary: oklch(0.58 0.12 185);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.967 0.001 286.375);
+  --secondary-foreground: oklch(0.21 0.006 285.885);
+  --muted: oklch(0.963 0.002 197.1);
+  --muted-foreground: oklch(0.56 0.021 213.5);
+  --accent: oklch(0.963 0.002 197.1);
+  --accent-foreground: oklch(0.218 0.008 223.9);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.925 0.005 214.3);
+  --input: oklch(0.925 0.005 214.3);
+  --ring: oklch(0.58 0.12 185);
+  --chart-1: oklch(0.76 0.11 180);
+  --chart-2: oklch(0.68 0.13 194);
+  --chart-3: oklch(0.58 0.12 185);
+  --chart-4: oklch(0.62 0.12 150);
+  --chart-5: oklch(0.52 0.09 222);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.987 0.002 197.1);
+  --sidebar-foreground: oklch(0.148 0.004 228.8);
+  --sidebar-primary: oklch(0.58 0.12 185);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.963 0.002 197.1);
+  --sidebar-accent-foreground: oklch(0.218 0.008 223.9);
+  --sidebar-border: oklch(0.925 0.005 214.3);
+  --sidebar-ring: oklch(0.58 0.12 185);
 }
 
 .dark {
-    --background: oklch(0.153 0.006 107.1);
-    --foreground: oklch(0.988 0.003 106.5);
-    --card: oklch(0.228 0.013 107.4);
-    --card-foreground: oklch(0.988 0.003 106.5);
-    --popover: oklch(0.228 0.013 107.4);
-    --popover-foreground: oklch(0.988 0.003 106.5);
-    --primary: oklch(0.47 0.157 37.304);
-    --primary-foreground: oklch(0.98 0.016 73.684);
-    --secondary: oklch(0.274 0.006 286.033);
-    --secondary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.286 0.016 107.4);
-    --muted-foreground: oklch(0.737 0.021 106.9);
-    --accent: oklch(0.286 0.016 107.4);
-    --accent-foreground: oklch(0.988 0.003 106.5);
-    --destructive: oklch(0.704 0.191 22.216);
-    --border: oklch(1 0 0 / 10%);
-    --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.58 0.031 107.3);
-    --chart-1: oklch(0.837 0.128 66.29);
-    --chart-2: oklch(0.705 0.213 47.604);
-    --chart-3: oklch(0.646 0.222 41.116);
-    --chart-4: oklch(0.553 0.195 38.402);
-    --chart-5: oklch(0.47 0.157 37.304);
-    --sidebar: oklch(0.228 0.013 107.4);
-    --sidebar-foreground: oklch(0.988 0.003 106.5);
-    --sidebar-primary: oklch(0.705 0.213 47.604);
-    --sidebar-primary-foreground: oklch(0.98 0.016 73.684);
-    --sidebar-accent: oklch(0.286 0.016 107.4);
-    --sidebar-accent-foreground: oklch(0.988 0.003 106.5);
-    --sidebar-border: oklch(1 0 0 / 10%);
-    --sidebar-ring: oklch(0.58 0.031 107.3);
+  --background: oklch(0.148 0.004 228.8);
+  --foreground: oklch(0.987 0.002 197.1);
+  --card: oklch(0.218 0.008 223.9);
+  --card-foreground: oklch(0.987 0.002 197.1);
+  --popover: oklch(0.218 0.008 223.9);
+  --popover-foreground: oklch(0.987 0.002 197.1);
+  --primary: oklch(0.74 0.12 185);
+  --primary-foreground: oklch(0.148 0.004 228.8);
+  --secondary: oklch(0.274 0.006 286.033);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.275 0.011 216.9);
+  --muted-foreground: oklch(0.723 0.014 214.4);
+  --accent: oklch(0.275 0.011 216.9);
+  --accent-foreground: oklch(0.987 0.002 197.1);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.74 0.12 185);
+  --chart-1: oklch(0.82 0.11 180);
+  --chart-2: oklch(0.74 0.12 194);
+  --chart-3: oklch(0.68 0.11 160);
+  --chart-4: oklch(0.62 0.1 222);
+  --chart-5: oklch(0.58 0.09 125);
+  --sidebar: oklch(0.218 0.008 223.9);
+  --sidebar-foreground: oklch(0.987 0.002 197.1);
+  --sidebar-primary: oklch(0.74 0.12 185);
+  --sidebar-primary-foreground: oklch(0.148 0.004 228.8);
+  --sidebar-accent: oklch(0.275 0.011 216.9);
+  --sidebar-accent-foreground: oklch(0.987 0.002 197.1);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.74 0.12 185);
+}
+
+@theme inline {
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
 @layer base {
-    * {
-        @apply border-border outline-ring/50;
-    }
-    body {
-        @apply bg-background text-foreground;
-    }
-    html {
-        @apply font-sans;
-    }
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  html {
+    @apply font-sans;
+  }
+
+  /* ── Themed scrollbars ───────────────────────────────────────────────── */
+
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+
+  /* WebKit / Chromium / Edge / Safari */
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--border);
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    transition: background-color 150ms ease-out;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: var(--muted-foreground);
+  }
+  *::-webkit-scrollbar-thumb:active {
+    background-color: var(--primary);
+  }
+  *::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
+  /* Optional: thinner scrollbar inside scrollable dialogs/panels */
+  [data-slot="scroll-thin"]::-webkit-scrollbar,
+  [role="dialog"] *::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  [data-slot="scroll-thin"]::-webkit-scrollbar-thumb,
+  [role="dialog"] *::-webkit-scrollbar-thumb {
+    border: 0;
+    background-color: color-mix(in oklab, var(--border) 70%, transparent);
+  }
+  [data-slot="scroll-thin"]::-webkit-scrollbar-thumb:hover,
+  [role="dialog"] *::-webkit-scrollbar-thumb:hover {
+    background-color: var(--muted-foreground);
+  }
 }
 
-/* ── Button press feedback (Emil) ──────────────────────────────────────── */
-button,
-[role="button"] {
-    transition: transform 160ms var(--ease-out);
+/* ── Relato diagram canvas ───────────────────────────────────────────────
+   Themed entirely from the shared shadcn tokens above, so it follows
+   light/dark mode automatically instead of carrying its own fixed palette.
+
+   NOTE: intentionally NOT inside @layer — React Flow's own stylesheet
+   (@xyflow/react/dist/style.css) ships unlayered, and per the CSS cascade
+   spec any unlayered rule beats ALL layered rules regardless of specificity.
+   If this block were inside @layer (as it used to be), React Flow's default
+   white control/minimap backgrounds would always win over our theme — which
+   is why the zoom/fit/lock buttons looked white even in dark mode. Keeping
+   this unlayered (plus !important on the few properties React Flow also
+   sets inline-ish) guarantees our theme wins regardless of import order. */
+
+.relato-canvas {
+  position: relative;
+  background:
+    radial-gradient(
+        circle at 1px 1px,
+        color-mix(in oklab, var(--foreground) 14%, transparent) 1px,
+        transparent 0
+      )
+      0 0 / 18px 18px,
+    var(--background);
 }
 
-button:active,
-[role="button"]:active {
-    transform: scale(0.97);
+.relato-canvas .react-flow {
+  background: transparent;
 }
 
-@media (prefers-reduced-motion: reduce) {
-    button,
-    [role="button"] {
-        transition: none;
-    }
-
-    button:active,
-    [role="button"]:active {
-        transform: none;
-    }
-
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
+.relato-canvas .react-flow__edge-path {
+  stroke: var(--muted-foreground);
 }
 
-/* ── React Flow theme overrides (cascade layer) ──────────────────────────── */
-.react-flow {
-    --xy-background-color: transparent;
-    --xy-edge-stroke-default: var(--muted-foreground);
-    --xy-edge-stroke-width-default: 1.5;
-    --xy-handle-background-color: var(--muted-foreground);
-    --xy-handle-border-color: var(--border);
+.relato-canvas .react-flow__edge-textbg {
+  fill: var(--background);
 }
 
-.dark .react-flow {
-    --xy-edge-stroke-default: var(--muted-foreground);
-    --xy-handle-border-color: var(--border);
+.relato-canvas .react-flow__edge-text {
+  fill: var(--foreground);
+  font-size: 10px;
+  font-weight: 700;
 }
 
-/* ── Hover-only interactions (touch-safe) ────────────────────────────────── */
-@media (hover: hover) and (pointer: fine) {
-    .react-flow__edge:hover .react-flow__edge-path {
-        stroke-opacity: 0.8;
-    }
-    .react-flow__handle:hover {
-        cursor: crosshair;
-    }
+.relato-canvas .react-flow__controls {
+  left: 14px;
+  bottom: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border) !important;
+  border-radius: 8px;
+  background: color-mix(in oklab, var(--card) 94%, transparent) !important;
+  color: var(--muted-foreground) !important;
+  box-shadow:
+    0 10px 28px -4px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 color-mix(in oklab, var(--foreground) 4%, transparent);
+  backdrop-filter: blur(12px);
 }
 
-/* ── Bottom toolbar safe area ──────────────────────────────────────────── */
-/* Toolbar is fixed at bottom-4 (16px) with ~44px height = 60px from bottom */
-.react-flow__pane {
-    padding-bottom: 4rem;
+.relato-canvas .react-flow__controls-button {
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-bottom: 1px solid var(--border) !important;
+  background: transparent !important;
+  color: inherit !important;
+  transition:
+    background-color 150ms var(--ease-out-strong),
+    color 150ms var(--ease-out-strong),
+    transform 120ms var(--ease-out-strong);
 }
 
-/* ── Overrides layer — React Flow UI chrome ─────────────────────────────── */
-@layer overrides {
-    .react-flow__controls {
-        border-color: var(--border);
-        border-radius: var(--radius-md);
-        overflow: hidden;
-        box-shadow: 0 1px 3px
-            color-mix(in oklch, var(--color-foreground) 8%, transparent);
-    }
-    .react-flow__controls-button {
-        background: var(--background);
-        border-color: var(--border);
-        color: var(--foreground);
-        transition: background 120ms var(--ease-out);
-    }
-    .react-flow__controls-button svg {
-        fill: var(--foreground);
-    }
-    @media (hover: hover) and (pointer: fine) {
-        .react-flow__controls-button:hover {
-            background: var(--muted);
-        }
-    }
-    /* NOTE: Hiding attribution requires a commercial React Flow license. */
-    .react-flow__attribution {
-        display: none;
-    }
-    .react-flow__minimap {
-        bottom: 5rem;
-    }
+.relato-canvas .react-flow__controls-button:last-child {
+  border-bottom: 0;
 }
+
+.relato-canvas .react-flow__controls-button:hover,
+.relato-canvas .react-flow__controls-button:focus-visible {
+  background: var(--accent) !important;
+  color: var(--accent-foreground) !important;
+}
+
+.relato-canvas .react-flow__controls-button:active {
+  transform: scale(0.96);
+}
+
+.relato-canvas .react-flow__controls-button svg {
+  fill: currentColor !important;
+  stroke: currentColor !important;
+}
+
+.relato-canvas .react-flow__minimap {
+  right: 14px;
+  bottom: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border) !important;
+  border-radius: 8px;
+  background: color-mix(in oklab, var(--card) 94%, transparent) !important;
+  opacity: 0.92;
+  box-shadow:
+    0 10px 28px -4px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 color-mix(in oklab, var(--foreground) 4%, transparent);
+}
+
+.relato-canvas .react-flow__minimap svg {
+  background: color-mix(in oklab, var(--card) 94%, transparent) !important;
+}
+
+.relato-canvas .react-flow__minimap:hover {
+  opacity: 1;
+}
+
